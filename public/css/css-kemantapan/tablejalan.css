@@ -1,0 +1,25 @@
+.tb_jlan_cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+.tb_jlan_cont h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 3vw;
+}
+
+.tb_jlan_cont h1 small {
+  color: rgb(22, 167, 92);
+}
+
+.tb_jlan_cont .table-responsive {
+  height: 70vh;
+  width: 95%;
+}
+
+.tb_jlan_cont .table-responsive .container-custom {
+  width: 100%;
+  height: 67vh;
+}

@@ -1,0 +1,104 @@
+.layanan_cont {
+  width: 100%;
+  height: 90vh;
+
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layanan_cont .layanan_Sub {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.layanan_cont .layanan_Sub .layanan_img {
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 50%;
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layanan_cont .layanan_Sub .layanan_img img {
+  width: 35vw;
+}
+
+.layanan_cont .layanan_Sub .layanan_item_cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.layanan_cont .layanan_Sub .layanan_item_cont h1 {
+  font-size: 2.5vw;
+}
+.layanan_cont .layanan_Sub .layanan_item_cont h1 small {
+  color: green;
+}
+.layanan_cont .layanan_Sub .layanan_item_cont .layanan_item {
+  list-style: none;
+  margin: 0px;
+}
+
+/* Custom styles */
+.layanan_cont .card {
+  width: 100%;
+}
+.layanan_cont .card-icon {
+  font-size: 48px;
+}
+.layanan_cont .card-body-flex {
+  display: flex;
+  align-items: center;
+}
+.layanan_cont .card-body-flex img {
+  width: 5vw;
+}
+.layanan_cont .card-text {
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .layanan_cont {
+    width: 100%;
+  }
+  .layanan_cont .layanan_Sub {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .layanan_cont .layanan_Sub .layanan_item_cont,
+  .layanan_cont .layanan_Sub .layanan_img {
+    width: 100%;
+  }
+  .layanan_cont .layanan_Sub .layanan_item_cont h1 {
+    font-size: 8vw;
+  }
+  .layanan_cont .layanan_Sub .layanan_img {
+    margin-left: 0px;
+  }
+  .layanan_cont .layanan_Sub .layanan_img img {
+    width: 80%;
+  }
+
+  .layanan_cont .layanan_Sub .layanan_item_cont .layanan_item .layanan_list p {
+    font-size: 3vw;
+  }
+}

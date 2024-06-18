@@ -1,0 +1,77 @@
+<section class="tb_jlan_cont">
+  <h1 style="text-align: center">Tabel <small>Jalan</small></h1>
+  <div class="table-responsive">
+    <table class="table table-bordered container-custom">
+      <thead>
+        <tr>
+          <th scope="col">Nama Ruas Jalan</th>
+          <th scope="col">Kabupaten/Kota yang Dilalui</th>
+          <th scope="col">Panjang Ruas</th>
+          <th scope="col">Kondisi Baik</th>
+          <th scope="col">Kondisi Sedang</th>
+          <th scope="col">Kondisi Ringan</th>
+          <th scope="col">Kondisi Berat</th>
+          <th scope="col">Tahun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data1.forEach(d => { const gettahun = data2.find((dt2) => dt2.id ===
+        d.tahun_id ); const getkab = data3.find((dt3) => dt3.id ===
+        d.kabupaten_id ) %>
+        <tr>
+          <td><%=d.nama_ruas%></td>
+          <td><%=getkab.nama_kabupaten%></td>
+          <td><%=d.panjang%></td>
+          <td><%=d.panjang_kondisi_baik %></td>
+          <td><%=d.panjang_kondisi_sedang%></td>
+          <td><%=d.panjang_rusak_ringan%></td>
+          <td><%=d.panjang_rusak_berat%></td>
+          <td><%=gettahun.tahun%></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <nav aria-label="Page navigation">
+    <% if (totPage > 5) { %>
+    <ul class="pagination">
+      <% if (currentPage > 1) { %>
+      <li class="page-item">
+        <a class="page-link" href="/kemantapan/jembatan/table?page=1">First</a>
+      </li>
+      <li class="page-item disabled">
+        <span class="page-link">...</span>
+      </li>
+      <% } %> <% for (let i = Math.max(1, currentPage - 2); i <=
+      Math.min(currentPage + 2, totPage); i++) { %>
+      <li class="page-item <% if (currentPage === i) { %>active<% } %>">
+        <a class="page-link" href="/kemantapan/jalan/table?page=<%= i %>"
+          ><%= i %></a
+        >
+      </li>
+      <% } %> <% if (currentPage < totPage - 2) { %>
+      <li class="page-item disabled">
+        <span class="page-link">...</span>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/kemantapan/jalan/table?page=<%= totPage %>"
+          >Last</a
+        >
+      </li>
+      <% } %>
+    </ul>
+    <% } else { %>
+    <!-- Jika halaman tidak lebih dari 10, tampilkan semua nomor halaman -->
+    <ul class="pagination">
+      <% for (let i = 1; i <= totPage; i++) { %>
+      <li class="page-item <% if (currentPage === i) { %>active<% } %>">
+        <a class="page-link" href="/kemantapan/jalan/table?page=<%= i %>"
+          ><%= i %></a
+        >
+      </li>
+      <% } %>
+    </ul>
+    <% } %>
+  </nav>
+</section>

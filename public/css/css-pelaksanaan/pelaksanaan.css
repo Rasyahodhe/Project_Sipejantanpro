@@ -1,0 +1,53 @@
+.pelaksanaan_cont {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.pelaksanaan_cont .pelaksanaan_tittle {
+  width: 100%;
+}
+.pelaksanaan_cont .pelaksanaan_tittle h1 {
+  text-align: center;
+}
+.pelaksanaan_cont .pelaksanaan_tittle h1 small {
+  color: green;
+}
+.pelaksanaan_cont .pelaksanaan_tittle hr {
+  border: 5px solid green;
+  width: 100%;
+}
+.pelaksanaan_cont .row:nth-child(2) {
+  width: 100%;
+}
+.pelaksanaan_cont .row .form-group label {
+  font-weight: bold;
+}
+.pelaksanaan_cont .row .container-fluid .card-body {
+  display: flex;
+  gap: 10px;
+}
+.pelaksanaan_cont .row .container-fluid .card-body .card-explain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pelaksanaan_cont .row .container-fluid .card-body .card-explain .card-title a {
+  color: green;
+}
+.pelaksanaan_cont .row .container-fluid .card-body .card-img {
+  width: 40%;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 20px 20px 20px 20px;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 20px 20px 20px 20px;
+  -ms-border-radius: 20px 20px 20px 20px;
+  -o-border-radius: 20px 20px 20px 20px;
+}
+.pelaksanaan_cont .row .container-fluid .card-body .card-img img {
+  width: 30vw;
+  height: 40vh;
+  object-fit: cover;
+}

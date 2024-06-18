@@ -1,0 +1,46 @@
+<section class="detPel_cont">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Detail <small>Pelaksanaan</small></h1>
+        <hr />
+        <!-- Active photo -->
+
+        <div class="card mb-3">
+          <img
+            id="active-photo"
+            src="<%=data[0].file_path%>"
+            class="card-img-top"
+            alt="Active Photo"
+          />
+          <div class="card-body">
+            <h5 id="active-photo-title" class="card-title">
+              <%=data[0].nama_foto%>
+            </h5>
+            <p id="active-photo-description" class="card-text">
+              <%=data[0].deskripsi%>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h2>Photo List</h2>
+        <% data.forEach(d => { %>
+        <div id="photo-list" class="list-group">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action photo-list-item"
+            data-img="<%=d.file_path%>"
+            data-title="<%=d.nama_foto%>"
+            data-description="<%=d.deskripsi%>"
+          >
+            <img src="<%=d.file_path%>" alt="Photo 1" />
+            <%=d.nama_foto%>
+          </a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+.cont_tutorial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tutorial_cont {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 20px;
+}
+.tutorial_cont .tutorial_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  height: 20vh;
+}
+.tutorial_cont .tutorial_header h1 {
+  font-size: 2.5vw;
+}
+.tutorial_cont .tutorial_header h1 small {
+  color: green;
+}
+.tutorial_cont .tutorial_header p {
+  height: 60vh;
+  padding: 0px 10px;
+}
+
+@media (max-width: 768px) {
+  .tutorial_cont {
+    margin-top: 1px;
+    margin-bottom: 5vh;
+    flex-direction: column;
+  }
+  .tutorial_cont .tutorial_header {
+    height: 40vh;
+  }
+  .tutorial_cont .tutorial_header h1 {
+    font-size: 8vw;
+  }
+  .tutorial_cont .tutorial_header p {
+    font-size: 13px;
+  }
+  .tutorial_cont .tutorial_content iframe {
+    width: 80vw;
+    height: 300px;
+  }
+}

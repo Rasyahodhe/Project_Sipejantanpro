@@ -1,0 +1,14 @@
+@import "./jalan.css";
+@import "./jembatan.css";
+@import "./tablejalan.css";
+@import "./tablejembatan.css";
+
+.kemantapan_cont {
+  min-height: 100vh;
+}
+.disabled-link {
+  pointer-events: none;
+  cursor: default; /* Opsi: menetapkan kursor default untuk menunjukkan non-interaktif */
+  color: white; /* Opsi: menyesuaikan warna teks */
+  text-decoration: none; /* Opsi: menghapus garis bawah */
+}

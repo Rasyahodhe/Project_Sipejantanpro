@@ -1,0 +1,29 @@
+/* Css Home */
+@import "./css-home/all.css";
+@import "./css-layout/all.css";
+@import "./css-kemantapan/all.css";
+@import "./css-pelaksanaan/all.css";
+@import "./css-sk/all.css";
+
+/* Css Kemantapan */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-family: roboto;
+}
+body {
+  /* background-color: rgb(250, 250, 250); */
+  background-image: url("../asset/PhotoComponent/backgound.webp");
+}
+body .line {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  body .line {
+    opacity: 1;
+  }
+}

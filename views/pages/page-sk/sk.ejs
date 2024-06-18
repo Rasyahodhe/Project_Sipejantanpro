@@ -1,0 +1,78 @@
+<section class="container-fluid sk_cont">
+  <div class="skjudul">
+    <h1>Surat <small>Keputusan</small></h1>
+    <hr />
+  </div>
+  <div class="search_cont">
+    <form action="">
+      <input type="text" id="search" placeholder="Search" />
+      <button type="submit"><i class="bi bi-search"></i> Search</button>
+    </form>
+  </div>
+  <div class="row">
+    <% function truncateText(text, maxLength) { if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "..."; }//Setting Code truncate text
+    return text.toString(); } %>
+    <!-- ============================================== -->
+    <% data.forEach(data => { %>
+    <div class="row_item">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-h">
+            <img src="/../asset/PhotoComponent/doc.png" alt="document" />
+            <!-- Icon -->
+            <h4 class="card-title"><%=data.judul%></h4>
+          </div>
+          <!-- Title -->
+          <p id="des" class="card-text" style="text-align: justify">
+            <%= truncateText(data.deskripsi,70) %>
+          </p>
+          <!-- Description -->
+          <a href="<%=data.file_path%>" class="btn btn-download"
+            ><i class="bi bi-cloud-arrow-down"></i> Download</a
+          >
+          <!-- Download Button -->
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+
+    <!-- Repeat the card block above for a total of 10 cards -->
+  </div>
+  <nav aria-label="Page navigation">
+    <% if (totPage > 10) { %>
+    <ul class="pagination">
+      <% if (currentPage > 1) { %>
+      <li class="page-item">
+        <a class="page-link" href="/SK?page=1">First</a>
+      </li>
+      <li class="page-item disabled">
+        <span class="page-link">...</span>
+      </li>
+      <% } %> <% for (let i = Math.max(1, currentPage - 2); i <=
+      Math.min(currentPage + 2, totPage); i++) { %>
+      <li class="page-item <% if (currentPage === i) { %>active<% } %>">
+        <a class="page-link" href="/SK?page=<%= i %>"><%= i %></a>
+      </li>
+      <% } %> <% if (currentPage < totPage - 2) { %>
+      <li class="page-item disabled">
+        <span class="page-link">...</span>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="/SK?page=<%= totPage %>">Last</a>
+      </li>
+      <% } %>
+    </ul>
+    <% } else { %>
+    <!-- Jika halaman tidak lebih dari 10, tampilkan semua nomor halaman -->
+    <ul class="pagination">
+      <% for (let i = 1; i <= totPage; i++) { %>
+      <li class="page-item <% if (currentPage === i) { %>active<% } %>">
+        <a class="page-link" href="/SK?page=<%= i %>"><%= i %></a>
+      </li>
+      <% } %>
+    </ul>
+    <% } %>
+  </nav>
+</section>

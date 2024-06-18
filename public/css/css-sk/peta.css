@@ -1,0 +1,140 @@
+.peta_cont {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.peta_cont hr {
+  border: 5px solid green;
+  width: 100%;
+}
+.peta_cont .row {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.peta_cont .row .row_item {
+  width: 45%;
+}
+
+.peta_cont .petajudul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.peta_cont .petajudul h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 3vw;
+}
+
+.peta_cont h1 small {
+  color: rgb(22, 167, 92);
+}
+
+.peta_cont .search_cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.peta_cont .search_cont form {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.peta_cont .search_cont form input {
+  width: 60%;
+  text-align: center;
+  border-radius: 20px 0px 0px 20px;
+  -webkit-border-radius: 20px 0px 0px 20px;
+  -moz-border-radius: 20px 0px 0px 20px;
+  -ms-border-radius: 20px 0px 0px 20px;
+  -o-border-radius: 20px 0px 0px 20px;
+}
+
+.peta_cont .search_cont form button {
+  border-radius: 0px 20px 20px 0px;
+  -webkit-border-radius: 0px 20px 20px 0px;
+  -moz-border-radius: 0px 20px 20px 0px;
+  -ms-border-radius: 0px 20px 20px 0px;
+  -o-border-radius: 0px 20px 20px 0px;
+  background-color: rgb(22, 167, 92);
+  color: white;
+  border: 0px;
+}
+.peta_cont .search_cont form input,
+.peta_cont .search_cont form button {
+  padding: 10px;
+}
+.peta_cont .row .row_item .card {
+  height: fit-content;
+}
+.peta_cont .row .row_item .card .card-h {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.peta_cont .row .row_item .card .card-h h4 {
+  font-weight: bold;
+  font-size: 1.3vw;
+}
+.peta_cont .row .row_item .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+.peta_cont .row .row_item .card .card-body img {
+  width: 8vw;
+  object-fit: cover;
+}
+.peta_cont .row .row_item .card .card-body p {
+  font-size: 1vw;
+}
+
+.peta_cont .row .row_item .btn-download {
+  background-color: rgb(22, 167, 92);
+  color: white;
+  border: 0px;
+}
+.peta_cont .row .row_item .btn-download:hover,
+.peta_cont .row .row_item .btn-download:focus {
+  background-color: green;
+}
+@media (max-width: 768px) {
+  .peta_cont .petajudul h1 {
+    font-size: 40px;
+  }
+  .peta_cont .row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .peta_cont .row .row_item {
+    width: 100%;
+  }
+
+  .peta_cont .row .row_item .card {
+    height: fit-content;
+  }
+  .peta_cont .row .row_item .card .card-h h4 {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .peta_cont .row .row_item .card .card-body p {
+    font-size: 10px;
+  }
+  .peta_cont .row .row_item .card .card-body img {
+    width: 80px;
+  }
+}

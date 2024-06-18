@@ -1,0 +1,208 @@
+footer {
+  margin-top: 10vh;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  font-family: roboto;
+  background-color: rgb(22, 167, 92);
+  color: white;
+}
+
+footer .f_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+footer .f_menu .f_menu_head {
+  width: 100%;
+  padding-left: 60px;
+}
+footer .f_menu .f_menu_head img {
+  width: 300px;
+}
+footer .f_menu .f_menu_head .f_head_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .f_menu .f_menu_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 200px;
+}
+
+footer .f_menu .f_menu_item div {
+  width: 30%;
+  border-right: 1px solid white;
+}
+
+/* footer .f_menu .f_menu_item div:nth-child(2) {
+    width: 200px;
+  } */
+
+footer .f_menu .f_menu_item ul {
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+}
+
+footer .f_menu .f_menu_item .m_perencanaan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .f_menu .f_menu_item div ul li:hover,
+footer .f_menu .f_menu_item div ul li:focus {
+  background-color: rgb(3, 87, 43);
+}
+footer .collapse {
+  width: 9vw;
+}
+
+footer .f_menu .sitemenu {
+  padding-left: 1vw;
+  font-size: 2vw;
+}
+
+footer .f_menu a {
+  font-size: 1vw;
+  text-decoration: none;
+  color: white;
+}
+footer .f_menu a:hover {
+  background-color: rgb(3, 87, 43);
+  color: white;
+}
+
+footer .f_menu .create_by {
+  border-top: 1px solid white;
+  width: 100%;
+  padding-left: 40px;
+}
+
+/* Setting Pelaksanaan */
+footer .kab {
+  border-bottom: 1px solid white;
+}
+footer .kab p {
+  height: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+footer .kab:hover p {
+  padding-left: 10%;
+}
+footer .kab:hover .list_tahun {
+  margin-left: 0px;
+}
+footer .list_tahun {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 30px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+footer .list_tahun li a {
+  color: wheat;
+  font-size: 16px;
+}
+footer .list_tahun li a:hover {
+  color: white;
+}
+
+/* Setting m-lainnya */
+footer .m_lainnya ul li {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+footer .m_lainnya ul li a {
+  display: block;
+  width: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+footer .m_lainnya ul li:hover a {
+  padding-left: 10%;
+}
+
+/* Responsive */
+@media (max-width: 786px) {
+  footer .f_menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .f_menu .f_menu_head {
+    padding: 0px;
+  }
+
+  footer .f_menu div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .f_menu .f_menu_item h5 {
+    width: 100%;
+    border-bottom: 1px solid white;
+  }
+  footer .f_menu .f_menu_item div ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .f_menu a {
+    font-size: 3vw;
+  }
+  footer .f_menu .f_menu_item {
+    width: 100%;
+  }
+  footer .f_menu .f_menu_item div {
+    width: 100%;
+  }
+  footer .f_menu div ul li .collapse .list_tahun {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  footer .f_menu .f_menu_item div {
+    border: 0px;
+  }
+  footer .f_menu .sitemenu {
+    padding-left: 0px;
+  }
+  footer .f_menu .sitemenu {
+    font-size: 5vw;
+  }
+
+  footer .list_tahun {
+    margin-left: 0px;
+    width: 100%;
+    border: 1px solid black;
+  }
+}

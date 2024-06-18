@@ -1,0 +1,26 @@
+.detPel_cont {
+  width: 100%;
+  height: fit-content;
+  padding: 0;
+}
+.detPel_cont .container {
+  height: 100vh;
+  background-color: white;
+}
+.detPel_cont h1 {
+  font-weight: bold;
+}
+.detPel_cont h1 small {
+  color: green;
+}
+/* Custom styles */
+.detPel_cont .photo-list-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Add pointer cursor for clickable items */
+}
+.detPel_cont .photo-list-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
