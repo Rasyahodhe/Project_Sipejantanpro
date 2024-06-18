@@ -13,10 +13,10 @@ server.use(express.urlencoded({ extended: true }));
 
 server.use(router);
 
-// server
-//   .use(mIddleware.notfound)
-//   .use(mIddleware.internalError)
-//   .use(mIddleware.hendlerError);
+server
+  .use(mIddleware.notfound)
+  .use(mIddleware.internalError)
+  .use(mIddleware.hendlerError);
 
 server.listen(port, () => {
   console.log(`Server Berjalan di http://localhost:${port}`);
