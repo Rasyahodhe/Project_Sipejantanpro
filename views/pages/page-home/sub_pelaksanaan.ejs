@@ -7,137 +7,19 @@
   </div>
   <div class="result_cont">
     <ul class="results">
-      <% data.forEach(d => { %>
-
+      <% data.forEach(d => { const getjudul = data2.find(pel=>pel.id === d.pelaksanaan_id ) %>
       <li class="result">
         <a
           href="/pel/<%=d.tahun_id  %>/<%=d.kabupaten_id  %>/detail/<%=d.pelaksanaan_id  %>"
         >
           <img src="<%=d.file_path %>" width="500" height="500" alt="" />
           <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
+            <div class="text"><%= getjudul.judul %></div>
           </div>
         </a>
       </li>
-
       <% }) %>
-      <!-- <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan2.jpg"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan3.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan4.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan5.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan6.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan7.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan8.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan9.jpg"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li>
-      <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan10.png"
-            width="500"
-            height="500"
-            alt=""
-          />
-          <div class="overlay">
-            <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
-          </div>
-        </a>
-      </li> -->
+
     </ul>
   </div>
 </section>

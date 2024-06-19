@@ -39,10 +39,17 @@
 }
 
 @media (max-width: 768px) {
+  .cont_tutorial {
+    height: fit-content;
+    padding: 0px;
+  }
   .tutorial_cont {
-    margin-top: 1px;
-    margin-bottom: 5vh;
+    width: 100%;
+    height: fit-content;
     flex-direction: column;
+    padding-top: 10vh;
+    align-items: center;
+    gap: 10vh;
   }
   .tutorial_cont .tutorial_header {
     height: 40vh;

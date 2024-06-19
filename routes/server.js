@@ -1,5 +1,6 @@
 const {
   loadJenisData,
+  loadJenisDataByID,
   addData,
   loadCombineJembatan,
   loadCombineJalan,
@@ -10,9 +11,10 @@ const express = require("express");
 const router = express.Router();
 // Setting Home
 router.get("/", async (req, res) => {
-  await loadJenisData("dokumentasi")
-    .then(({ data }) => {
-      const dokumentasi = { data }.data;
+  await loadCombinePel()
+    .then((combineData) => {
+      const pelaksanaan = combineData.pelaksanaan.data;
+      const dokumentasi = combineData.dokumentasi.data;
 
       const uniqData = {};
       dokumentasi.forEach((d) => {
@@ -20,13 +22,14 @@ router.get("/", async (req, res) => {
           uniqData[d.pelaksanaan_id] = d;
         }
       });
-
       const filteredData = Object.values(uniqData);
+
       return res.render("./pages/home.ejs", {
         title: "Home",
         page: "../pages/home.ejs",
         layout: "./layouts/main_layout.ejs",
         data: filteredData,
+        data2: pelaksanaan,
       });
     })
     .catch((error) => {

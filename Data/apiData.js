@@ -21,6 +21,29 @@ const loadJenisData = async (type) => {
     throw error;
   }
 };
+const loadJenisDataByID = async (type,id) => {
+  try {
+    const url = `https://admin.sipejantanpro.sultraprov.go.id/api/${type}/${id}`;
+    const token = "39cc3d12ea5641f46292666eadead7c3";
+    const Headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const pelaksanaan = await fetch(url, {
+      method: "GET",
+      headers: Headers,
+    });
+
+    if (!pelaksanaan.ok) {
+      throw new Error("Network Response ERROR");
+    }
+
+    const data = await pelaksanaan.json();
+    return data;
+  } catch (error) {
+    console.error("There was a problem with your fetch operation:", error);
+    throw error;
+  }
+};
 
 // Fecth Combine Jembatan
 const loadCombineJembatan = async () => {
@@ -142,6 +165,7 @@ const addData = async (data) => {
 
 module.exports = {
   loadJenisData,
+  loadJenisDataByID,
   addData,
   loadCombineJembatan,
   loadCombineJalan,

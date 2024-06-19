@@ -79,10 +79,12 @@
 @media (max-width: 768px) {
   .layanan_cont {
     width: 100%;
+    height: fit-content;
   }
   .layanan_cont .layanan_Sub {
     flex-direction: column-reverse;
     width: 100%;
+    height: fit-content;
   }
   .layanan_cont .layanan_Sub .layanan_item_cont,
   .layanan_cont .layanan_Sub .layanan_img {
@@ -90,6 +92,9 @@
   }
   .layanan_cont .layanan_Sub .layanan_item_cont h1 {
     font-size: 8vw;
+  }
+  .layanan_cont .layanan_Sub .layanan_item_cont .layanan_item img {
+    width: 50px;
   }
   .layanan_cont .layanan_Sub .layanan_img {
     margin-left: 0px;

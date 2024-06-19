@@ -26,6 +26,7 @@
   display: grid;
   place-items: center;
   min-height: 60vh;
+  overflow: hidden;
 }
 
 .result_cont ul {
@@ -115,7 +116,6 @@
   z-index: 1;
 }
 
-
 .results {
   list-style-type: none;
   padding: 0;
@@ -177,7 +177,6 @@
     min-height: 50vw;
   }
   .galery_cont .result_cont .results {
-    border: 1px solid black;
     width: 100%;
   }
   .galery_cont .result_cont .results .result img {

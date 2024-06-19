@@ -42,6 +42,10 @@
   .adm_cont {
     margin-bottom: 10vh;
   }
+  .adm_cont .h_adm h1 {
+    font-size: 8vw;
+  }
+
   .adm_cont .container form .title_cont {
     flex-direction: column;
   }

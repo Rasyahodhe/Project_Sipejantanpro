@@ -185,11 +185,55 @@ footer .m_lainnya ul li:hover a {
   footer .f_menu .f_menu_item div {
     width: 100%;
   }
-  footer .f_menu div ul li .collapse .list_tahun {
+  /* Setting head */
+  footer .f_menu .f_menu_head .f_head_item .item_head p {
+    text-align: center;
+  }
+
+  /* Setting Pelaksanaan */
+  footer .f_menu .f_menu_item .m_pelaksanaan .m_pel_comp {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 20px;
+  }
+  footer .f_menu .f_menu_item .m_pelaksanaan .m_pel_comp .kab {
+    width: 100%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
     gap: 5px;
   }
+  footer .f_menu div ul li .list_tahun {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer .kab p {
+    text-align: center;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+  footer .kab:hover p {
+    padding-left: 0px;
+  }
+  footer .kab:hover .list_tahun {
+    margin-left: 0px;
+  }
+  footer .list_tahun {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 0px;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+
   footer .f_menu .f_menu_item div {
     border: 0px;
   }
@@ -200,9 +244,27 @@ footer .m_lainnya ul li:hover a {
     font-size: 5vw;
   }
 
-  footer .list_tahun {
-    margin-left: 0px;
+  /* Setting M_lainnya */
+  footer .m_lainnya ul li {
     width: 100%;
-    border: 1px solid black;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+  footer .m_lainnya ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    font-size: 15px;
+  }
+  footer .m_lainnya ul li:hover a {
+    padding-left: 0px;
   }
 }
