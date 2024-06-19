@@ -7,7 +7,8 @@
   </div>
   <div class="result_cont">
     <ul class="results">
-      <% data.forEach(d => { const getjudul = data2.find(pel=>pel.id === d.pelaksanaan_id ) %>
+      <% data.forEach(d => { const getjudul = data2.find(pel=>pel.id ===
+      d.pelaksanaan_id ) %>
       <li class="result">
         <a
           href="/pel/<%=d.tahun_id  %>/<%=d.kabupaten_id  %>/detail/<%=d.pelaksanaan_id  %>"
@@ -19,7 +20,6 @@
         </a>
       </li>
       <% }) %>
-
     </ul>
   </div>
 </section>
