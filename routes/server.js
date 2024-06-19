@@ -1,26 +1,49 @@
-const { loadJenisData, addData } = require("../Data/apiData");
-const fetchData = require("../Data/apiCombineJalan");
-const fetchDataJembatan = require("../Data/apiCombineJembatan");
+const {
+  loadJenisData,
+  addData,
+  loadCombineJembatan,
+  loadCombineJalan,
+  loadCombinePel,
+} = require("../Data/apiData");
 
 const express = require("express");
 const router = express.Router();
 // Setting Home
 router.get("/", async (req, res) => {
-  return res.render("./pages/home.ejs", {
-    title: "Home",
-    page: "../pages/home.ejs",
-    layout: "./layouts/main_layout.ejs",
-  });
+  await loadJenisData("dokumentasi")
+    .then(({ data }) => {
+      const dokumentasi = { data }.data;
+
+      const uniqData = {};
+      dokumentasi.forEach((d) => {
+        if (!uniqData[d.pelaksanaan_id]) {
+          uniqData[d.pelaksanaan_id] = d;
+        }
+      });
+
+      const filteredData = Object.values(uniqData);
+      return res.render("./pages/home.ejs", {
+        title: "Home",
+        page: "../pages/home.ejs",
+        layout: "./layouts/main_layout.ejs",
+        data: filteredData,
+      });
+    })
+    .catch((error) => {
+      res.json({
+        message: `${error}`,
+      });
+    });
 });
 
 router.post("/", async (req, res) => {
-  const { name, judul, type, ket, img_lapor, lokasi } = req.body;
+  const { name, judul, type, ket, lokasi } = req.body;
   const data = {
     nama: name,
     judul: judul,
     jenis_infrastruktur: type,
     keterangan: ket,
-    foto_url: img_lapor,
+    foto_url: "foto URL",
     lokasi: lokasi,
   };
 
@@ -30,16 +53,26 @@ router.post("/", async (req, res) => {
 // Setting pelaksanaan
 router.get("/pel/:tahun/:kabkota/", async (req, res) => {
   const { tahun, kabkota } = req.params;
-  await loadJenisData("pelaksanaan")
-    .then(({ data }) => {
-      const pelaksanaan = { data }.data;
+  await loadCombinePel()
+    .then((combineData) => {
+      const pelaksanaan = combineData.pelaksanaan.data;
+      const dokumentasi = combineData.dokumentasi.data;
+
+      // Filtering Pelaksanaan
       const gettahun = pelaksanaan.filter((p) => {
         return p.tahun_id === +tahun;
       });
       const pel = gettahun.filter((p) => {
         return p.kabupaten_id === +kabkota;
       });
-
+      // Filtering Dokumentasi
+      const gettahundok = dokumentasi.filter((d) => {
+        return d.tahun_id === +tahun;
+      });
+      const dok = gettahundok.filter((d) => {
+        return d.kabupaten_id === +kabkota;
+      });
+      // Filtering Page sesuai dengan Jumlah data pelaksnaan
       const perPage = 10,
         currentPage = parseInt(req.query.page) || 1,
         startIndex = (currentPage - 1) * perPage;
@@ -51,6 +84,7 @@ router.get("/pel/:tahun/:kabkota/", async (req, res) => {
         page: "../pages/page-pelaksanaan/pelaksanaan.ejs",
         layout: "./layouts/main_layout.ejs",
         data: pagenation,
+        dok: dok,
         currentPage: currentPage,
         totPage: totalPage,
         tahun: tahun,
@@ -176,7 +210,7 @@ router.get("/kemantapan/jalan", async (req, res) => {
 });
 
 router.get("/kemantapan/jalan/table/", async (req, res) => {
-  await fetchData()
+  await loadCombineJalan()
     .then((combinedData) => {
       const api1 = combinedData.api1Data.data;
       const api2 = combinedData.api2Data.data;
@@ -217,7 +251,7 @@ router.get("/kemantapan/jembatan", async (req, res) => {
 });
 
 router.get("/kemantapan/jembatan/table/", async (req, res) => {
-  await fetchDataJembatan()
+  await loadCombineJembatan()
     .then((combinedData) => {
       const jalan = combinedData.api1Data.data;
       const tahun = combinedData.api2Data.data;

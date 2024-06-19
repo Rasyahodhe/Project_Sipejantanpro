@@ -7,20 +7,21 @@
   </div>
   <div class="result_cont">
     <ul class="results">
+      <% data.forEach(d => { %>
+
       <li class="result">
-        <a href="/pelaksanaan/detail">
-          <img
-            src="../asset/Photo/pelaksanaan1.png"
-            width="500"
-            height="500"
-            alt=""
-          />
+        <a
+          href="/pel/<%=d.tahun_id  %>/<%=d.kabupaten_id  %>/detail/<%=d.pelaksanaan_id  %>"
+        >
+          <img src="<%=d.file_path %>" width="500" height="500" alt="" />
           <div class="overlay">
             <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
           </div>
         </a>
       </li>
-      <li class="result">
+
+      <% }) %>
+      <!-- <li class="result">
         <a href="/pelaksanaan/detail">
           <img
             src="../asset/Photo/pelaksanaan2.jpg"
@@ -136,7 +137,7 @@
             <div class="text">RAPAT PERENCANAAN JEMBATAN</div>
           </div>
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </section>
