@@ -72,9 +72,13 @@ router.get("/pel/:tahun/:kabkota/", async (req, res) => {
       const gettahundok = dokumentasi.filter((d) => {
         return d.tahun_id === +tahun;
       });
+
       const dok = gettahundok.filter((d) => {
         return d.kabupaten_id === +kabkota;
       });
+
+      
+
       // Filtering Page sesuai dengan Jumlah data pelaksnaan
       const perPage = 10,
         currentPage = parseInt(req.query.page) || 1,

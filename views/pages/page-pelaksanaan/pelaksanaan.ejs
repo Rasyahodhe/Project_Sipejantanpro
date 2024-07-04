@@ -48,11 +48,14 @@
   <!-- Card section -->
   <div class="row">
     <% data.forEach(d => { %>
+    <!--=====================Untuk Dapatin Gambar Dokumentasi pelaksanaan================================  -->
+    <% const imgpeldok = dok.find((dok)=>{ return dok.pelaksanaan_id === +d.id
+    }) %>
     <div class="container-fluid mb-2">
       <div class="card">
         <div class="card-body">
           <div class="card-img">
-            <img src="<%=dok[0].file_path%>" alt="Dokumentasi" />
+            <img src="<%=imgpeldok.file_path%>" alt="Dokumentasi" />
           </div>
           <div class="card-explain">
             <h5 class="card-title">
