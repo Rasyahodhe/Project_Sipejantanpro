@@ -3,13 +3,12 @@
     <h1>Kemantapan <small>Jalan</small></h1>
     <hr />
   </div>
-
-  <div class="container-fluid mt-5">
+  <div class="container-fluid mt-2">
     <div class="row">
       <div class="row_item">
         <div class="small-box">
           <div class="icon text-success">
-            <img src="/../asset/photoComponent/kemantapan/ruas.gif" alt="" />
+            <img src="/asset/photoComponent/kemantapan/ruas.gif" alt="" />
           </div>
           <h3><%=data[0].jumlah_ruas%></h3>
           <p>Ruas Jalan</p>
@@ -23,7 +22,7 @@
       <div class="row_item">
         <div class="small-box">
           <div class="icon text-success">
-            <img src="/../asset/photoComponent/kemantapan/road.gif" alt="" />
+            <img src="/asset/photoComponent/kemantapan/road.gif" alt="" />
           </div>
           <h3><%=data[0].total_panjang%></h3>
           <p>Panjang Jalan (KM)</p>
@@ -37,7 +36,7 @@
       <div class="row_item">
         <div class="small-box">
           <div class="icon text-warning">
-            <img src="/../asset/photoComponent/kemantapan/smile.gif" alt="" />
+            <img src="/asset/photoComponent/kemantapan/smile.gif" alt="" />
           </div>
           <h3><%=mantap.toFixed(2)%></h3>
           <p>Mantap (%)</p>
@@ -51,7 +50,7 @@
       <div class="row_item">
         <div class="small-box">
           <div class="icon text-warning">
-            <img src="/../asset/photoComponent/kemantapan/sad.gif" alt="" />
+            <img src="/asset/photoComponent/kemantapan/sad.gif" alt="" />
           </div>
           <h3><%=tidakmantap.toFixed(2)%></h3>
           <p>Tidak Mantap (%)</p>
@@ -62,106 +61,7 @@
       </div>
     </div>
   </div>
-  <div class="chart_cont">
-    <!-- Tabel -->
-    <!-- <div class="mt-5">
-      <h2 class="mb-4">Tabel Data Jalan</h2>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Nama Ruas Jalan</th>
-              <th scope="col">Kabupaten/Kota yang Dilalui</th>
-              <th scope="col">Panjang Ruas</th>
-              <th scope="col">Kondisi Baik</th>
-              <th scope="col">Kondisi Sedang</th>
-              <th scope="col">Kondisi Ringan</th>
-              <th scope="col">Kondisi Berat</th>
-              <th scope="col">Tahun</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Jalan Raya Utama</td>
-              <td>Jakarta Pusat</td>
-              <td>10</td>
-              <td>5</td>
-              <td>3</td>
-              <td>1</td>
-              <td>1</td>
-              <td>2024</td>
-            </tr>
-            <tr>
-              <td>Jalan Merdeka</td>
-              <td>Bandung</td>
-              <td>8</td>
-              <td>3</td>
-              <td>2</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2024</td>
-            </tr>
-            <tr>
-              <td>Jalan Merdeka</td>
-              <td>Bandung</td>
-              <td>8</td>
-              <td>3</td>
-              <td>2</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2024</td>
-            </tr>
-            <tr>
-              <td>Jalan Merdeka</td>
-              <td>Bandung</td>
-              <td>8</td>
-              <td>3</td>
-              <td>2</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2024</td>
-            </tr>
-            <tr>
-              <td>Jalan Merdeka</td>
-              <td>Bandung</td>
-              <td>8</td>
-              <td>3</td>
-              <td>2</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2024</td>
-            </tr>
-            <tr>
-              <td>Jalan Merdeka</td>
-              <td>Bandung</td>
-              <td>8</td>
-              <td>3</td>
-              <td>2</td>
-              <td>2</td>
-              <td>1</td>
-              <td>2024</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      
-      <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
-              >Previous</a
-            >
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-    </div> -->
+  <div class="chart_cont mt-5">
     <!-- Grafik -->
     <div>
       <h2>Grafik Kualitas Jalan</h2>
@@ -193,6 +93,8 @@
             ],
           },
           options: {
+            responsive:true,
+            maintainAspectRatio: false,
             scales: {
               y: {
                 beginAtZero: true,

@@ -1,13 +1,13 @@
 <hr class="line" />
 <!-- Page Aduan Masyarakat -->
-<section class="container-fluid adm_cont" id="adm">
+<section class="container-fluid adm_cont" id="adm" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out"  data-aos-offset="200" data-aos-delay="50">
   <div class="h_adm">
     <hr />
     <h1>Masukkan <small>Masyarakat</small></h1>
     <hr />
   </div>
   <div class="container">
-    <form class="p-3" method="post" action="/">
+    <form class="p-3" method="post" action="/" enctype="multipart/form-data">
       <div class="mb-3 title_cont">
         <div>
           <label for="name" class="form-label">Nama</label>
@@ -32,7 +32,7 @@
       </div>
       <div class="mb-3">
         <label for="img_lapor">Foto</label>
-        <input type="file" class="form-control" id="img_lapor" />
+        <input type="file" class="form-control" id="img_lapor" name="img_lapor"/>
       </div>
       <div class="mb-3">
         <label for="lokasi" class="form-label">Lokasi</label>
@@ -44,7 +44,7 @@
           placeholder="Masukkan Lokasi"
         />
       </div>
-      <button type="submit" class="btn btn-success mt-3">Kirim Laporan</button>
+      <button disabled="disabled" type="submit" class="btn btn-success mt-3">Kirim Laporan</button>
     </form>
   </div>
 </section>

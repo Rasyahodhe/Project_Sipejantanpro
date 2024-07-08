@@ -71,9 +71,33 @@
 }
 .layanan_cont .card-body-flex img {
   width: 5vw;
+  object-fit: cover;
 }
 .layanan_cont .card-text {
   margin-left: 15px;
+  text-align: justify;
+}
+
+.layanan_cont .layanan_Sub .layanan_item_cont .layanan_item .layanan_list {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.layanan_cont .layanan_Sub .layanan_item_cont .layanan_item .layanan_list .row {
+  width: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.layanan_cont
+  .layanan_Sub
+  .layanan_item_cont
+  .layanan_item
+  .layanan_list
+  .row:hover {
+  border: 1px solid green;
 }
 
 @media (max-width: 768px) {

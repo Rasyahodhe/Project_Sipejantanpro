@@ -3,54 +3,36 @@
     <h1>Dokumentasi <small>Pelaksanaan</small></h1>
     <hr />
   </div>
+
   <div class="row">
     <!-- Filter options -->
     <div class="col-md-6">
       <div class="form-group">
         <label for="lokasi">Lokasi:</label>
-        <select class="form-control" id="lokasi">
-          <option value="1">Kabupaten Bombana</option>
-          <option value="2">Kabupaten Buton</option>
-          <option value="3">Kabupaten Buton Selatan</option>
-          <option value="4">Kabupaten Buton Tengah</option>
-          <option value="5">Kabupaten Buton Utara</option>
-          <option value="6">Kabupaten Kolaka</option>
-          <option value="7">Kabupaten Kolaka Timur</option>
-          <option value="8">Kabupaten Kolaka Utara</option>
-          <option value="9">Kabupaten Konawe</option>
-          <option value="10">Kabupaten Konawe Kepulauan</option>
-          <option value="11">Kabupaten Konawe Selatan</option>
-          <option value="12">Kabupaten Konawe Utara</option>
-          <option value="13">Kabupaten Muna</option>
-          <option value="14">Kabupaten Muna Barat</option>
-          <option value="15">Kabupaten Wakatobi</option>
-          <option value="16">Kabupaten Bau-Bau</option>
-          <option value="17">Kabupaten Kendari</option>
-
-          <!-- Add more options as needed -->
-        </select>
+        <!-- ===================================================================== -->
+        <% const kotakab = kabkota.find((k)=>{ return k.id == +kabkotaenpoint}) %>
+        <!-- ===================================================================== -->
+        <h1 style="color: green"><%=kotakab.nama_kabupaten%></h1>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
         <label for="tahun">Tahun:</label>
-        <select class="form-control" id="tahun">
-          <option value="2022">2020</option>
-          <option value="2023">2021</option>
-          <option value="2023">2022</option>
-          <option value="2023">2023</option>
-          <option value="2023">2024</option>
-          <!-- Add more options as needed -->
-        </select>
+        <!-- ======================================================================= -->
+        <% const tahunpel = tahun.find((year)=>{ return year.id == +tahunenpoint }) %>
+        <!-- ======================================================================= -->
+        <h1><%=tahunpel.tahun%></h1>
       </div>
     </div>
   </div>
   <!-- Card section -->
+
   <div class="row">
     <% data.forEach(d => { %>
-    <!--=====================Untuk Dapatin Gambar Dokumentasi pelaksanaan================================  -->
+    <!--========== ==Untuk mendapatkan Gambar Dokumentasi============================== -->
     <% const imgpeldok = dok.find((dok)=>{ return dok.pelaksanaan_id === +d.id
     }) %>
+    <!-- ============================================================================== -->
     <div class="container-fluid mb-2">
       <div class="card">
         <div class="card-body">

@@ -24,6 +24,16 @@
 .pelaksanaan_cont .row .form-group label {
   font-weight: bold;
 }
+.pelaksanaan_cont .row .container-fluid .card {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.pelaksanaan_cont .row .container-fluid .card:hover {
+  border: 1px solid green;
+}
 .pelaksanaan_cont .row .container-fluid .card-body {
   display: flex;
   gap: 10px;
@@ -50,4 +60,31 @@
   width: 30vw;
   height: 40vh;
   object-fit: cover;
+  object-position: center;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.pelaksanaan_cont .row .container-fluid .card-body .card-img img:hover {
+  width: 40vw;
+  height: 50vh;
+}
+
+@media (max-width: 991px) {
+  .pelaksanaan_cont .row .container-fluid .card-body {
+    flex-direction: column;
+  }
+  .pelaksanaan_cont .row .container-fluid .card-body .card-img {
+    width: 100%;
+  }
+  .pelaksanaan_cont .row .container-fluid .card-body .card-img img {
+    width: 100%;
+  }
+  .pelaksanaan_cont .row .container-fluid .card-body .card-img img:hover {
+    width: 120%;
+    height: 60vh;
+  }
 }

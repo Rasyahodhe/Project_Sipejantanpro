@@ -4,12 +4,13 @@ const mIddleware = require("./middleware/middleware");
 const ejsLayouts = require("express-ejs-layouts");
 const port = 3300;
 
-const router = require("./routes/server");
 server.set("view engine", "ejs");
 server.use(express.static("public"));
 server.use(ejsLayouts);
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+
+const router = require("./routes/server");
 
 server.use(router);
 

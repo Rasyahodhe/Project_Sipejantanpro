@@ -1,46 +1,41 @@
+const axios = require("axios");
 const loadJenisData = async (type) => {
   try {
     const url = `https://admin.sipejantanpro.sultraprov.go.id/api/${type}`;
-    const token = "39cc3d12ea5641f46292666eadead7c3";
-    const Headers = {
+    const token = "39cc3d12ea5641f46292666eadead7c3"; // Your token here
+    const headers = {
       Authorization: `Bearer ${token}`,
     };
-    const pelaksanaan = await fetch(url, {
-      method: "GET",
-      headers: Headers,
-    });
 
-    if (!pelaksanaan.ok) {
+    const response = await axios.get(url, { headers });
+
+    if (response.status !== 200) {
       throw new Error("Network Response ERROR");
     }
 
-    const data = await pelaksanaan.json();
-    return data;
+    return response.data;
   } catch (error) {
-    console.error("There was a problem with your fetch operation:", error);
+    console.error("There was a problem with your axios operation:", error);
     throw error;
   }
 };
-const loadJenisDataByID = async (type,id) => {
+const loadJenisDataByID = async (type, id) => {
   try {
     const url = `https://admin.sipejantanpro.sultraprov.go.id/api/${type}/${id}`;
-    const token = "39cc3d12ea5641f46292666eadead7c3";
-    const Headers = {
+    const token = "39cc3d12ea5641f46292666eadead7c3"; // Your token here
+    const headers = {
       Authorization: `Bearer ${token}`,
     };
-    const pelaksanaan = await fetch(url, {
-      method: "GET",
-      headers: Headers,
-    });
 
-    if (!pelaksanaan.ok) {
+    const response = await axios.get(url, { headers });
+
+    if (response.status !== 200) {
       throw new Error("Network Response ERROR");
     }
 
-    const data = await pelaksanaan.json();
-    return data;
+    return response.data;
   } catch (error) {
-    console.error("There was a problem with your fetch operation:", error);
+    console.error("There was a problem with your axios operation:", error);
     throw error;
   }
 };
@@ -98,14 +93,18 @@ const loadCombineJalan = async () => {
 // fetch Combine pelaksanaan
 const loadCombinePel = async () => {
   try {
-    const [apidata1, apidata2] = await Promise.all([
+    const [apidata1, apidata2, apidata3, apidata4] = await Promise.all([
       loadJenisData("pelaksanaan"),
       loadJenisData("dokumentasi"),
+      loadJenisData("tahun"),
+      loadJenisData("kabkota"),
     ]);
 
     const combineData = {
       pelaksanaan: apidata1,
       dokumentasi: apidata2,
+      tahun: apidata3,
+      kabkota: apidata4,
     };
     return combineData;
   } catch (error) {
@@ -117,51 +116,24 @@ const loadCombinePel = async () => {
 const addData = async (data) => {
   try {
     const url = `https://admin.sipejantanpro.sultraprov.go.id/api/masukan`;
-    const token = "39cc3d12ea5641f46292666eadead7c3";
-    const Headers = {
+    const token = "39cc3d12ea5641f46292666eadead7c3"; // Your token here
+    const headers = {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     };
-    await fetch(url, {
-      method: "POST",
-      headers: Headers,
-      body: JSON.stringify(data),
-    });
+
+    const response = await axios.post(url, data, { headers });
+
+    if (response.status !== 200) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    console.log("Data sent successfully:", response.data);
   } catch (error) {
-    console.error("There was a problem with your fetch operation:", error);
+    console.error("There was a problem with your axios operation:", error);
     throw error;
   }
 };
-
-//Testttt
-// loadJenisData("hukum")
-//   .then(({ data }) => {
-//     // console.log({ data }.data[0].tahun_id);
-//     const pel = { data }.data;
-//     const filer = pel.filter((p) => {
-//       return p.jenis === "Peta Jalan";
-//     });
-
-//     console.log(filer);
-//   })
-//   .catch((error) => {
-//     console.error("There was a problem with fetching data:", error);
-//   });
-
-// const test = async () => {
-//   await loadCombinePel()
-//     .then((combineData) => {
-//       const api1 = combineData.pelaksanaan.data;
-//       const api2 = combineData.dokumentasi.data;
-//       console.log(api1);
-//       console.log(api2);
-//     })
-//     .catch((error) => {
-//       console.log(`${error}`);
-//     });
-// };
-
-// test();
 
 module.exports = {
   loadJenisData,

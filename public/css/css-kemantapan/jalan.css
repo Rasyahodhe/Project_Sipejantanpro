@@ -27,7 +27,7 @@
 }
 .smallbox_cont .smallbox_tittle h1 {
   text-align: center;
-  font-size: 3vw;
+  width: 100%;
 }
 .smallbox_cont .smallbox_tittle h1 small {
   color: green;
@@ -60,7 +60,7 @@
 }
 .chart_cont {
   width: 100%;
-  height: fit-content;
+  height: 70vh;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -70,14 +70,23 @@
 }
 .chart_cont div {
   width: 80vw;
+  height: 60vh;
+
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .chart_cont .mt-5 .table-responsive {
   width: 100%;
 }
 
-
 @media (max-width: 768px) {
+  .smallbox_cont {
+    width: 100%;
+  }
+  .smallbox_cont .smallbox_tittle {
+    width: 100%;
+  }
   .smallbox_cont .container-fluid {
     display: flex;
     flex-direction: column;
@@ -89,8 +98,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
   .smallbox_cont .container-fluid .row .row_item {
+    width: 80%;
+  }
+  .chart_cont {
     width: 100%;
+    height: auto;
+  }
+  .chart_cont div {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
   }
 }

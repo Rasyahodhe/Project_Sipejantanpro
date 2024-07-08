@@ -22,8 +22,15 @@ body .line {
   opacity: 0;
 }
 
+.content_cont {
+  height: auto;
+}
 @media (max-width: 768px) {
   body .line {
     opacity: 1;
+  }
+  .content_cont {
+    height: auto;
+    width: 100%;
   }
 }

@@ -40,13 +40,13 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { name, judul, type, ket, lokasi } = req.body;
+  const { name, judul, type, ket, lokasi, img_lapor } = req.body;
   const data = {
     nama: name,
     judul: judul,
     jenis_infrastruktur: type,
     keterangan: ket,
-    foto_url: "foto URL",
+    foto_url: img_lapor,
     lokasi: lokasi,
   };
 
@@ -60,6 +60,8 @@ router.get("/pel/:tahun/:kabkota/", async (req, res) => {
     .then((combineData) => {
       const pelaksanaan = combineData.pelaksanaan.data;
       const dokumentasi = combineData.dokumentasi.data;
+      const tahunpel = combineData.tahun.data;
+      const kabkotapel = combineData.kabkota.data;
 
       // Filtering Pelaksanaan
       const gettahun = pelaksanaan.filter((p) => {
@@ -72,13 +74,9 @@ router.get("/pel/:tahun/:kabkota/", async (req, res) => {
       const gettahundok = dokumentasi.filter((d) => {
         return d.tahun_id === +tahun;
       });
-
       const dok = gettahundok.filter((d) => {
         return d.kabupaten_id === +kabkota;
       });
-
-      
-
       // Filtering Page sesuai dengan Jumlah data pelaksnaan
       const perPage = 10,
         currentPage = parseInt(req.query.page) || 1,
@@ -94,8 +92,10 @@ router.get("/pel/:tahun/:kabkota/", async (req, res) => {
         dok: dok,
         currentPage: currentPage,
         totPage: totalPage,
-        tahun: tahun,
-        kabkota: kabkota,
+        tahun: tahunpel,
+        kabkota: kabkotapel,
+        kabkotaenpoint: kabkota,
+        tahunenpoint: tahun,
       });
     })
     .catch((error) => {
@@ -105,9 +105,10 @@ router.get("/pel/:tahun/:kabkota/", async (req, res) => {
 
 router.get("/pel/:tahun/:kabkota/detail/:id", async (req, res) => {
   const { tahun, kabkota, id } = req.params;
-  await loadJenisData("dokumentasi")
-    .then(({ data }) => {
-      const dokumentasi = { data }.data;
+  await loadCombinePel()
+    .then((combineData) => {
+      const dokumentasi = combineData.dokumentasi.data;
+      const pelaksanaan = combineData.pelaksanaan.data;
       // Ambil Data Tahun
       const getTahun = dokumentasi.filter((d) => {
         return d.tahun_id === +tahun;
@@ -123,6 +124,7 @@ router.get("/pel/:tahun/:kabkota/detail/:id", async (req, res) => {
         page: "../pages/page-pelaksanaan/detPel.ejs",
         layout: "./layouts/main_layout.ejs",
         data: getDok,
+        pelaksanaan: pelaksanaan,
       });
     })
     .catch((error) => {
